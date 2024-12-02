@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランキング | e☆イヤホン</title>
+    <link rel="stylesheet" href="css/Rank.css">
+    <script src="js/Rank.js" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- 送料無料バナー -->
+    <div class="shipping-banner">
+        <div class="shipping-banner__content">
+            <span class="shipping-banner__highlight">新品 3,000円</span>
+            <span class="shipping-banner__text">以上送料無料 16:00までのご注文で即日出荷</span>
+        </div>
+        <button type="button" class="shipping-banner__close" aria-label="閉じる">×</button>
+    </div>
+
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav">
+            <!-- PC用メニュー -->
+            <div class="logo">
+                <a href="Main.html">
+                    <img src="https://placehold.co/120x30?text=Logo" alt="ロゴ">
+                </a>
+            </div>
+
+            <div class="header__search">
+                <div class="header__search-wrap">
+                    <select class="header__search-select">
+                        <option>全て</option>
+                        <option>イヤホン</option>
+                        <option>ヘッドホン</option>
+                        <option>スピーカー</option>
+                    </select>
+                    <input type="text" class="header__search-input" placeholder="キーワードを入力してください">
+                    <button class="header__search-button">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="utility-menu">
+                <a href="#"><i class="fa-regular fa-user"></i></a>
+                <a href="#"><i class="fa-regular fa-heart"></i></a>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+
+            <!-- モバイル用メニュー -->
+            <div class="mobile-menu">
+                <i class="fa-solid fa-bars mobile-menu__hamburger"></i>
+                <a href="Main.html">
+                    <img src="https://placehold.co/120x30?text=Logo" alt="ロゴ" class="mobile-menu__logo">
+                </a>
+                <i class="fa-solid fa-cart-shopping mobile-menu__cart"></i>
+            </div>
+        </nav>
+
+        <!-- メインメニュー（PC用） -->
+        <div class="main-menu">
+            <div class="main-menu__container">
+                <div class="main-menu__hamburger">
+                    <i class="fa-solid fa-bars"></i>
+                    <span>すべて</span>
+                </div>
+                <div class="main-menu__items">
+                    <a href="#" class="main-menu__item">ブランド</a>
+                    <a href="#" class="main-menu__item">ランキング</a>
+                    <a href="#" class="main-menu__item">中古</a>
+                    <a href="#" class="main-menu__item">買取</a>
+                    <a href="#" class="main-menu__item">修理</a>
+                    <a href="#" class="main-menu__item">カスタムIEM</a>
+                    <a href="#" class="main-menu__item">店舗一覧</a>
+                    <a href="#" class="main-menu__item">商品を探す</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- モバイル索バー -->
+        <div class="mobile-search">
+            <div class="search-bar">
+                <select class="search-bar__select">
+                    <option>全て</option>
+                </select>
+                <input type="text" class="search-bar__input" placeholder="キーワードを入力してください">
+                <button class="search-bar__button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 기존 헤더 아래에 추가 -->
+    <main class="ranking-main">
+        <div class="ranking-container">
+            <!-- 랭킹 헤더 -->
+            <div class="ranking-header">
+                <h1 class="ranking-title">新品総合ランキング</h1>
+                <p class="ranking-period">集計期間：2024年10月20日～2024年10月27日</p>
+                <div class="ranking-info">
+                    <span class="total-items">合計274,019点</span>
+                    <span class="update-time">最終更新 1時間前</span>
+                </div>
+            </div>
+
+            <!-- 필터와 상품 목록을 감싸는 컨테이너 -->
+            <div class="ranking-content">
+                <!-- 왼쪽 필터 영역 -->
+                <aside class="filter-sidebar">
+                    <!-- 項目 필터 -->
+                    <div class="filter-section">
+                        <h3 class="filter-title">項目</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="condition" value="new">
+                                <span>新品</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="condition" value="used">
+                                <span>中古</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 中古ランクから探す 필터 -->
+                    <div class="filter-section">
+                        <h3 class="filter-title">中古ランクから探す</h3>
+                        <div class="filter-options">
+                            <!-- 필터 옵션들 -->
+                        </div>
+                    </div>
+
+                    <!-- カテゴリー 필터 -->
+                    <div class="filter-section">
+                        <h3 class="filter-title">カテゴリー</h3>
+                        <div class="filter-options">
+                            <div class="category-item">
+                                <span>ワイヤレス (154)</span>
+                            </div>
+                            <div class="category-item">
+                                <span>有線イヤホン (86)</span>
+                            </div>
+                            <!-- 추가 카테고리 -->
+                        </div>
+                    </div>
+
+                    <!-- ブランド 필터 -->
+                    <div class="filter-section">
+                        <h3 class="filter-title">ブランド</h3>
+                        <div class="search-brand">
+                            <input type="text" placeholder="ブランドを検索">
+                        </div>
+                        <div class="filter-options">
+                            <!-- 브랜드 옵션들 -->
+                        </div>
+                    </div>
+
+                    <!-- 価格 필터 -->
+                    <div class="filter-section">
+                        <h3 class="filter-title">価格</h3>
+                        <div class="price-ranges">
+                            <!-- 가격대 옵션들 -->
+                        </div>
+                    </div>
+
+                    <!-- カラー 필터 -->
+                    <div class="filter-section">
+                        <h3 class="filter-title">カラー</h3>
+                        <div class="color-options">
+                            <!-- 컬러 옵션들 -->
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- 오른쪽 상품 목록 영역 -->
+                <div class="product-list">
+                    <!-- 1번 상품 -->
+                    <div class="product-item">
+                        <div class="rank-number">1</div>
+                        <div class="product-image">
+                            <img src="https://placehold.co/200x200/eee/666?text=K6000" alt="K6000">
+                            <button class="favorite-button">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="brand">Water wave</div>
+                            <h3 class="product-name">K6000 [HI-M4CSS]</h3>
+                            <div class="price">¥12,000 <span class="tax">税込</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 2번 상품 -->
+                    <div class="product-item">
+                        <div class="rank-number">2</div>
+                        <div class="product-image">
+                            <img src="https://placehold.co/200x200/eee/666?text=Kapo" alt="Kapo">
+                            <button class="favorite-button">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="brand">Water wave</div>
+                            <h3 class="product-name">[中古] Kapo 完全ワイヤレスイヤホン ミックス</h3>
+                            <div class="price">¥12,000 <span class="tax">税込</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 3~12번 상품 (반복) -->
+                    <!-- 3번 상품 -->
+                    <div class="product-item">
+                        <div class="rank-number">3</div>
+                        <div class="product-image">
+                            <img src="https://placehold.co/200x200/eee/666?text=K6000" alt="K6000">
+                            <button class="favorite-button">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="brand">Water wave</div>
+                            <h3 class="product-name">K6000 [HI-M4CSS]</h3>
+                            <div class="price">¥12,000 <span class="tax">税込</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 4번 상품 -->
+                    <div class="product-item">
+                        <div class="rank-number">4</div>
+                        <div class="product-image">
+                            <img src="https://placehold.co/200x200/eee/666?text=Kapo" alt="Kapo">
+                            <button class="favorite-button">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="brand">Water wave</div>
+                            <h3 class="product-name">[中古] Kapo 完全ワイヤレスイヤホン ミックス</h3>
+                            <div class="price">¥12,000 <span class="tax">税込</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 5번 상품 -->
+                    <div class="product-item">
+                        <div class="rank-number">5</div>
+                        <div class="product-image">
+                            <img src="https://placehold.co/200x200/eee/666?text=K6000" alt="K6000">
+                            <button class="favorite-button">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="brand">Water wave</div>
+                            <h3 class="product-name">K6000 [HI-M4CSS]</h3>
+                            <div class="price">¥12,000 <span class="tax">税込</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 6번 상품 -->
+                    <div class="product-item">
+                        <div class="rank-number">6</div>
+                        <div class="product-image">
+                            <img src="https://placehold.co/200x200/eee/666?text=Kapo" alt="Kapo">
+                            <button class="favorite-button">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="brand">Water wave</div>
+                            <h3 class="product-name">[中古] Kapo 完全ワイヤレスイヤホン ミックス</h3>
+                            <div class="price">¥12,000 <span class="tax">税込</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 7번 상품 -->
+                    <div class="product-item">
+                        <div class="rank-number">7</div>
+                        <div class="product-image">
+                            <img src="https://placehold.co/200x200/eee/666?text=K6000" alt="K6000">
+                            <button class="favorite-button">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="brand">Water wave</div>
+                            <h3 class="product-name">K6000 [HI-M4CSS]</h3>
+                            <div class="price">¥12,000 <span class="tax">税込</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 8번 상품 -->
+                    <div class="product-item">
+                        <div class="rank-number">8</div>
+                        <div class="product-image">
+                            <img src="https://placehold.co/200x200/eee/666?text=Kapo" alt="Kapo">
+                            <button class="favorite-button">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="brand">Water wave</div>
+                            <h3 class="product-name">[中古] Kapo 完全ワイヤレスイヤホン ミックス</h3>
+                            <div class="price">¥12,000 <span class="tax">税込</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 9번 상품 -->
+                    <div class="product-item">
+                        <div class="rank-number">9</div>
+                        <div class="product-image">
+                            <img src="https://placehold.co/200x200/eee/666?text=K6000" alt="K6000">
+                            <button class="favorite-button">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="brand">Water wave</div>
+                            <h3 class="product-name">K6000 [HI-M4CSS]</h3>
+                            <div class="price">¥12,000 <span class="tax">税込</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 10번 상품 -->
+                    <div class="product-item">
+                        <div class="rank-number">10</div>
+                        <div class="product-image">
+                            <img src="https://placehold.co/200x200/eee/666?text=Kapo" alt="Kapo">
+                            <button class="favorite-button">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="brand">Water wave</div>
+                            <h3 class="product-name">[中古] Kapo 完全ワイヤレスイヤホン ミックス</h3>
+                            <div class="price">¥12,000 <span class="tax">税込</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 11번 상품 -->
+                    <div class="product-item">
+                        <div class="rank-number">11</div>
+                        <div class="product-image">
+                            <img src="https://placehold.co/200x200/eee/666?text=K6000" alt="K6000">
+                            <button class="favorite-button">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="brand">Water wave</div>
+                            <h3 class="product-name">K6000 [HI-M4CSS]</h3>
+                            <div class="price">¥12,000 <span class="tax">税込</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 12번 상품 -->
+                    <div class="product-item">
+                        <div class="rank-number">12</div>
+                        <div class="product-image">
+                            <img src="https://placehold.co/200x200/eee/666?text=Kapo" alt="Kapo">
+                            <button class="favorite-button">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="brand">Water wave</div>
+                            <h3 class="product-name">[中古] Kapo 完全ワイヤレスイヤホン ミックス</h3>
+                            <div class="price">¥12,000 <span class="tax">税込</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 페이지네이션 -->
+            <div class="pagination">
+                <span class="current">1</span>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <span class="dots">...</span>
+                <a href="#">次へ</a>
+                <a href="#">最後へ</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
