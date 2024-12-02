@@ -803,26 +803,6 @@ body {
     touch-action: pan-x;
 }
 
-.tab-menu:active {
-    cursor: grabbing;
-}
-
-/* Webkit 브라우저 스크롤바 숨기기 */
-.tab-menu::-webkit-scrollbar {
-    display: none;
-}
-
-.tab-button {
-    padding: 10px 20px;
-    border: none;
-    background: none;
-    font-size: 16px;
-    color: #666;
-    cursor: pointer;
-    position: relative;
-    white-space: nowrap;
-}
-
 /* 모바일 대응 */
 @media (max-width: 768px) {
     .tab-menu {
@@ -840,29 +820,17 @@ body {
     .tab-button.active::after {
         height: 1px;
     }
-
-    /* 스크롤 시 가운데 정렬을 위한 패딩 추가 */
-    .tab-menu::before,
-    .tab-menu::after {
-        content: '';
-        min-width: 15px;  /* 좌우 패딩과 동일한 값 */
-    }
 }
 
 @media (max-width: 480px) {
     .tab-menu {
-        padding: 0 10px 8px 10px;
         gap: 10px;
+        padding: 0 10px 8px 10px;
     }
 
     .tab-button {
         padding: 6px 12px;
         font-size: 13px;
-    }
-
-    .tab-menu::before,
-    .tab-menu::after {
-        min-width: 10px;  /* 좌우 패딩과 동일한 값 */
     }
 }
 
@@ -1790,7 +1758,7 @@ body {
 
 @media (max-width: 640px) {
     .mutual-grid {
-        height: 120px;  /* 모바일에서 더 작게 조정 */
+        height: 120px;  /* ��바일에서 더 작게 조정 */
     }
 }
 
@@ -3143,5 +3111,26 @@ body {
 .total-ranking__more-btn:hover {
     background: #f8f8f8;
     border-color: #ccc;
+}
+
+/* 탭 메뉴 컨테이너 추가 */
+.tab-menu-container {
+    display: flex;
+    justify-content: center;  /* 컨테이너 자체를 중앙 정렬 */
+    width: 100%;
+    overflow: hidden;  /* 스크롤바가 보이지 않도록 */
+}
+
+/* 탭 메뉴 내부 아이템들의 최소 너비 설정 */
+.tab-button {
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    min-width: max-content;  /* 텍스트가 잘리지 않도록 */
 }
 

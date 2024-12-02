@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         fixedHeight: 458
                     },
                     1440: {
-                        perPage: 1,
+                        perPage: 4,
                         gap: 20,
                         fixedWidth: 300,
                         fixedHeight: 342
