@@ -108,6 +108,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     1440: {
                         perPage: 4,
                         gap: 20,
+                        fixedWidth: 400,
+                        fixedHeight: 458
+                    },
+                    1200: {
+                        perPage: 4,
+                        gap: 20,
                         fixedWidth: 300,
                         fixedHeight: 342
                     },
